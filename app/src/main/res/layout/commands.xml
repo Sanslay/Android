@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+  <TextView
+    android:id="@+id/txt_arduinos"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_marginTop="40dp"
+    android:text="@string/titre_list_arduinos"
+    android:textColor="@color/blue"
+    android:textSize="20sp"/>
+  <ListView
+    android:id="@+id/ListViewArduinos"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:layout_alignParentLeft="true"
+    android:layout_below="@+id/txt_arduinos"
+    android:layout_marginTop="30dp"
+    android:background="@color/wheat">
+  </ListView>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/Commande"
+            android:textColor="@color/blue" android:textSize="20sp" android:id="@+id/nbcligno"
+            android:layout_centerVertical="true" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+  <EditText android:id="@+id/editJson" android:layout_width="300dp" android:layout_height="wrap_content"
+            android:ems="10" android:inputType="textUri"
+            android:layout_toEndOf="@+id/txt_arduinos" android:layout_toStartOf="@+id/texttitre"
+            android:hint="Une commande JSON" android:layout_below="@+id/nbcligno"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+            android:layout_alignParentRight="true" android:layout_alignParentEnd="true"/>
+  <Button android:id="@+id/buttonExc" android:layout_width="wrap_content" android:layout_height="wrap_content"
+          android:text="@string/titre_Blink_Button"
+          android:layout_below="@+id/editJson" android:layout_alignParentLeft="true"
+          android:layout_alignParentStart="true"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="@string/titre_Reponse" android:textColor="@color/blue" android:textSize="20sp"
+            android:id="@+id/Erreurnbclignotement"
+            android:layout_toEndOf="@+id/txt_arduinos"
+            android:layout_marginTop="50dp" android:layout_below="@+id/textErreur"
+            android:layout_toRightOf="@+id/txt_arduinos" android:layout_marginLeft="201dp"/>
+  <ListView android:id="@+id/listReponseCommand" android:layout_width="match_parent" android:layout_height="150dp"
+            android:background="@color/wheat"
+            android:layout_below="@+id/Erreurnbclignotement" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" android:layout_marginTop="42dp"
+            android:layout_alignParentBottom="true"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Large Text"
+    android:id="@+id/textcommand"
+    android:layout_toEndOf="@+id/nbcligno"
+    android:layout_alignTop="@+id/buttonExc"
+    android:layout_toLeftOf="@+id/textErreur" android:layout_toStartOf="@+id/textErreur"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Large Text"
+    android:id="@+id/textErreur"
+    android:layout_toEndOf="@+id/nbcligno"
+    android:layout_below="@+id/buttonExc" android:layout_toRightOf="@+id/nbcligno"/>
+</RelativeLayout>

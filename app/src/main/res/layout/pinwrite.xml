@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+  <TextView
+    android:id="@+id/txt_arduinos"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_marginTop="40dp"
+    android:text="@string/titre_list_arduinos"
+    android:textColor="@color/blue"
+    android:textSize="20sp"/>
+  <ListView
+    android:id="@+id/ListViewArduinos"
+    android:layout_width="match_parent"
+    android:layout_height="200dp"
+    android:background="@color/wheat" android:layout_below="@+id/txt_arduinos" android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+  </ListView>
+
+  <Spinner
+    android:id="@+id/Spinnernumeropin"
+    android:layout_width="200dp"
+    android:layout_height="50dp"
+    android:spinnerMode="dropdown" android:layout_alignBottom="@+id/textNumero"
+    android:layout_toRightOf="@+id/textNumero" android:layout_toEndOf="@+id/textNumero"
+    android:layout_marginLeft="66dp">
+  </Spinner>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge" android:text="Ecrire la valeur du pin"
+            android:id="@+id/texttitre" android:layout_toEndOf="@+id/Titre_Reponse"
+            android:layout_alignParentTop="true" android:layout_centerHorizontal="true"/>
+  <TextView android:id="@+id/textCommand" android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:text="Command" android:textColor="@color/blue" android:textSize="20sp"
+            android:layout_below="@+id/ListViewArduinos" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+  <RadioButton
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Analogique"
+    android:id="@+id/radioButtonAnalogique"
+    android:checked="false"
+    android:layout_alignTop="@+id/textMode" android:layout_alignLeft="@+id/Spinnernumeropin"
+    android:layout_alignStart="@+id/Spinnernumeropin" android:layout_alignRight="@+id/Spinnernumeropin"
+    android:layout_alignEnd="@+id/Spinnernumeropin"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Numero de pin"
+    android:id="@+id/textNumero"
+    android:layout_marginTop="27dp"
+    android:layout_below="@+id/textCommand" android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Mode"
+    android:id="@+id/textMode"
+    android:layout_below="@+id/textNumero" android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"/>
+  <RadioButton android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="Binaire"
+               android:id="@+id/radioBinaire" android:checked="false"
+               android:layout_toEndOf="@+id/radioButtonAnalogique" android:layout_gravity="right"
+               android:layout_toStartOf="@+id/texttitre"
+               android:layout_alignBottom="@+id/radioButtonAnalogique"
+               android:layout_toRightOf="@+id/radioButtonAnalogique" android:layout_toLeftOf="@+id/texttitre"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Valeur a ecrire"
+    android:id="@+id/textValeur"
+    android:layout_below="@+id/radioButtonAnalogique" android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"/>
+  <Switch
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/switchonoff"
+    android:checked="false" android:layout_alignBottom="@+id/seekBar" android:layout_alignLeft="@+id/seekBar"
+    android:layout_alignStart="@+id/seekBar"/>
+  <Button
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="Executer"
+    android:id="@+id/buttonExecuter"
+    android:layout_below="@+id/seekBar" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Large Text"
+    android:id="@+id/nbcligno"
+    android:layout_toEndOf="@+id/radioBinaire"
+    android:layout_alignBottom="@+id/Spinnernumeropin" android:layout_toRightOf="@+id/radioBinaire"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Large Text"
+    android:id="@+id/ExcText" android:layout_alignBottom="@+id/buttonExecuter"
+    android:layout_toRightOf="@+id/textValeur" android:layout_toEndOf="@+id/textValeur"/>
+  <SeekBar
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:id="@+id/seekBar"
+    android:layout_toEndOf="@+id/txt_arduinos"
+    android:layout_toStartOf="@+id/radioBinaire"
+    android:max="255"
+    android:indeterminate="false"
+    android:layout_below="@+id/radioButtonAnalogique" android:layout_toRightOf="@+id/txt_arduinos"
+    android:layout_alignRight="@+id/texttitre" android:layout_alignEnd="@+id/texttitre"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="Large Text"
+    android:id="@+id/textseek"
+    android:layout_toEndOf="@+id/textNumero"
+    android:layout_alignTop="@+id/switchonoff" android:layout_toRightOf="@+id/textNumero"/>
+  <ListView android:id="@+id/listReponsewrite" android:layout_width="match_parent" android:layout_height="150dp"
+            android:background="@color/wheat"
+            android:layout_toEndOf="@+id/switchonoff" android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+</RelativeLayout>

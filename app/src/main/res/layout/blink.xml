@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/RelativeLayout1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+  <TextView
+    android:id="@+id/txt_arduinos"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_alignParentLeft="true"
+    android:layout_marginTop="40dp"
+    android:text="@string/titre_list_arduinos"
+    android:textColor="@color/blue"
+    android:textSize="20sp"/>
+  <ListView
+    android:id="@+id/ListViewArduinos"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/wheat"
+    android:layout_below="@+id/txt_arduinos" android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true">
+  </ListView>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceLarge"
+    android:text="@string/titre_Blink"
+    android:id="@+id/texttitre" android:layout_alignParentTop="true" android:layout_centerHorizontal="true"
+    android:layout_marginTop="16dp"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="@string/Commande"
+    android:textColor="@color/blue"
+    android:textSize="20sp"
+    android:id="@+id/Fomulairespinner" android:layout_below="@+id/ListViewArduinos" android:layout_alignParentLeft="true"
+    android:layout_alignParentStart="true"/>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:text="Numéro de pin"
+    android:id="@+id/Command"
+    android:layout_above="@+id/ErreurPin" android:layout_alignParentLeft="true" android:layout_alignParentStart="true"
+    android:layout_marginBottom="66dp"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:id="@+id/ErreurPin"
+            android:layout_alignBottom="@+id/Spinnernumeropin" android:layout_toRightOf="@+id/Spinnernumeropin"
+            android:layout_toEndOf="@+id/Spinnernumeropin"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:text="Durée du clignotement en ms"
+            android:id="@+id/ExcText"
+            android:layout_marginTop="38dp" android:layout_below="@+id/ErreurPin" android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"/>
+  <EditText android:id="@+id/editTextClignotement" android:layout_width="300dp" android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="@string/txt_inputcligno1" android:inputType="textUri"
+            android:layout_toEndOf="@+id/ExcText"
+            android:layout_toStartOf="@+id/texttitre"
+            android:layout_alignBottom="@+id/ErreurPin" android:layout_alignLeft="@+id/editTextdureeclignotement"
+            android:layout_alignStart="@+id/editTextdureeclignotement"
+            android:layout_alignRight="@+id/Erreurnbclignotement" android:layout_alignEnd="@+id/Erreurnbclignotement"/>
+  <EditText android:id="@+id/editTextdureeclignotement" android:layout_width="300dp" android:layout_height="wrap_content"
+            android:ems="10" android:hint="@string/txt_inputcligno2" android:inputType="textUri"
+            android:layout_toEndOf="@+id/txt_arduinos"
+            android:layout_alignTop="@+id/ExcText" android:layout_toRightOf="@+id/txt_arduinos"/>
+  <Button android:id="@+id/buttonExecute" android:layout_width="wrap_content" android:layout_height="wrap_content"
+          android:text="@string/titre_Blink_Button"
+          android:layout_below="@+id/editTextdureeclignotement" android:layout_alignRight="@+id/Fomulairespinner"
+          android:layout_alignEnd="@+id/Fomulairespinner"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="@string/titre_Reponse"
+            android:textColor="@color/blue" android:textSize="20sp" android:id="@+id/Titre_Reponse"
+            android:layout_below="@+id/buttonExecute" android:layout_alignLeft="@+id/editTextdureeclignotement"
+            android:layout_alignStart="@+id/editTextdureeclignotement" android:layout_marginLeft="24dp"/>
+  <Spinner
+    android:id="@+id/Spinnernumeropin"
+    android:layout_width="200dp"
+    android:layout_height="50dp"
+    android:layout_alignTop="@+id/Command" android:layout_alignLeft="@+id/Titre_Reponse"
+    android:layout_alignStart="@+id/Titre_Reponse">
+  </Spinner>
+  <TextView
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:textAppearance="?android:attr/textAppearanceMedium"
+    android:id="@+id/Erreurnbclignotement"
+    android:layout_above="@+id/ExcText" android:layout_centerHorizontal="true"
+    android:layout_alignParentStart="false"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/Erreurtext2"
+            android:layout_alignTop="@+id/editTextdureeclignotement"
+            android:layout_alignRight="@+id/texttitre" android:layout_alignEnd="@+id/texttitre"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/ErreurPin"
+            android:layout_centerVertical="true" android:layout_alignLeft="@+id/Erreurtext2"
+            android:layout_alignStart="@+id/Erreurtext2"/>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:id="@+id/ExecuteText"
+            android:layout_toEndOf="@+id/Command" android:layout_alignBaseline="@+id/buttonExecute"
+            android:layout_alignBottom="@+id/buttonExecute" android:layout_toRightOf="@+id/Command"
+            android:layout_marginLeft="18dp" android:layout_alignRight="@+id/ExcText"
+            android:layout_alignEnd="@+id/ExcText"/>
+  <ListView
+    android:id="@+id/ListViewReponseBlink"
+    android:layout_width="match_parent"
+    android:layout_height="150dp"
+    android:background="@color/wheat"
+    android:layout_below="@+id/Titre_Reponse" android:layout_alignParentLeft="true" android:layout_alignParentStart="true">
+  </ListView>
+  <TextView android:layout_width="wrap_content" android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceMedium" android:text="Nombre de clignotements"
+            android:id="@+id/textView3"
+            android:layout_toEndOf="@+id/Spinnernumeropin" android:layout_centerVertical="true"
+            android:layout_alignParentLeft="true" android:layout_alignParentStart="true"/>
+
+</RelativeLayout>
